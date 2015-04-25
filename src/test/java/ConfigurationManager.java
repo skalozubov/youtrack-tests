@@ -1,37 +1,34 @@
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeTest;
+import org.testng.annotations.*;
 
 import java.util.concurrent.TimeUnit;
 
 public class ConfigurationManager {
     protected WebDriver driver;
-    protected String baseUrl;
+    public String baseUrl;
 
     @BeforeClass
-    public static void setUpClass() {
+    public void setUpClass() {
         System.out.println("Started all tests in class");
+        System.setProperty("webdriver.chrome.driver", "/usr/lib/chromedriver");
+        baseUrl = "https://mail.ru/";
     }
 
-    @BeforeTest
+    @BeforeMethod
     public void setUp() {
-        baseUrl = "https://mail.ru/";
-        System.setProperty("webdriver.chrome.driver", "/usr/lib/chromedriver");
         driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         driver.get(baseUrl);
     }
 
-    @AfterTest
+    @AfterMethod
     public void tearDown() throws Exception {
         driver.quit();
     }
 
     @AfterClass
-    public static void tearDownClass() {
+    public void tearDownClass() {
         System.out.println("Finished all tests in class");
     }
 }
