@@ -1,8 +1,18 @@
 import org.openqa.selenium.By;
 
-/**
- * Created by kate on 26.04.15.
- */
 public enum LocatorsEnum {
-    LOGIN_FIELD, PASSWORD_FIELD, SUBMIT_LOGIN_FORM_BUTTON
+
+    LOGIN_FIELD(By.id("mailbox__login")),
+    PASSWORD_FIELD(By.id("mailbox__password")),
+    SUBMIT_LOGIN_FORM_BUTTON(By.id("mailbox__auth__button"));
+
+    private By locator;
+
+    private LocatorsEnum(By locator) {
+        this.locator = locator;
+    }
+
+    public By getValue() {
+        return this.locator;
+    }
 }
