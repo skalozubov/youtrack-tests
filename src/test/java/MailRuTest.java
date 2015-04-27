@@ -3,30 +3,32 @@ import org.testng.annotations.Test;
 import static org.testng.Assert.assertEquals;
 
 public class MailRuTest extends ConfigurationManager {
-    private String incorrectLogin = "test";
-    private String incorrectPassword = "test";
-    private String correctLogin = "sourceittest";
-    private String correctPassword = "sourceit12345";
+
+    //TODO: read ExpectedConditions.java WebDriverWait.java
+    //TODO: 10 different tests with different asserts
+    //TODO: refactor the project with packages
 
     @Test
     public void unsuccessfulLoginTest() {
-        driver.get(baseUrl);
-        driver.findElement(LocatorsEnum.LOGIN_FIELD.getValue()).clear();
-        driver.findElement(LocatorsEnum.LOGIN_FIELD.getValue()).sendKeys(incorrectLogin);
-        driver.findElement(LocatorsEnum.PASSWORD_FIELD.getValue()).clear();
-        driver.findElement(LocatorsEnum.PASSWORD_FIELD.getValue()).sendKeys(incorrectPassword);
-        driver.findElement(LocatorsEnum.SUBMIT_LOGIN_FORM_BUTTON.getValue()).click();
-        assertEquals(driver.getTitle(), "Вход - Почта Mail.Ru", "Something went wrong while unsuccessful login");
+        loginPage.fillLoginField(testData.getIncorrectLogin())
+                 .fillPasswordField(testData.getIncorrectPassword())
+                 .submitLoginForm();
+        assertEquals(loginPage.getPageTitle(), testData.getPageTitle(), "Something went wrong while unsuccessful login");
     }
 
     @Test
     public void successfulLoginTest() {
-        driver.get(baseUrl);
-        driver.findElement(LocatorsEnum.LOGIN_FIELD.getValue()).clear();
-        driver.findElement(LocatorsEnum.LOGIN_FIELD.getValue()).sendKeys(correctLogin);
-        driver.findElement(LocatorsEnum.PASSWORD_FIELD.getValue()).clear();
-        driver.findElement(LocatorsEnum.PASSWORD_FIELD.getValue()).sendKeys(correctPassword);
-        driver.findElement(LocatorsEnum.SUBMIT_LOGIN_FORM_BUTTON.getValue()).click();
-        assertEquals(driver.getCurrentUrl(), "https://e.mail.ru/messages/inbox/?back=1", "Login was unsuccessful");
+        loginPage.fillLoginField(testData.getCorrectLogin())
+                .fillPasswordField(testData.getCorrectPassword())
+                .submitLoginForm();
+        assertEquals(driver.getCurrentUrl(), testData.getPageUrl(), "Login was unsuccessful");
+    }
+
+    @Test
+    public void checkEmailTest() {
+        InboxPage inboxPage = loginPage.fillLoginField(testData.getCorrectLogin())
+                .fillPasswordField(testData.getCorrectPassword())
+                .submitSuccessfulLoginForm();
+                inboxPage.getLatestEmail();
     }
 }

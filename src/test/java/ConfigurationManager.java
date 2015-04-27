@@ -5,8 +5,10 @@ import org.testng.annotations.*;
 import java.util.concurrent.TimeUnit;
 
 public class ConfigurationManager {
-    protected WebDriver driver;
+    protected static WebDriver driver = null;
     public String baseUrl;
+    protected TestData testData;
+    protected LoginPage loginPage;
 
     @BeforeClass
     public void setUpClass() {
@@ -20,6 +22,8 @@ public class ConfigurationManager {
         driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         driver.get(baseUrl);
+        testData = new TestData();
+        loginPage = new LoginPage();
     }
 
     @AfterMethod
@@ -30,5 +34,9 @@ public class ConfigurationManager {
     @AfterClass
     public void tearDownClass() {
         System.out.println("Finished all tests in class");
+    }
+
+    public static WebDriver getDriver() {
+        return driver;
     }
 }
