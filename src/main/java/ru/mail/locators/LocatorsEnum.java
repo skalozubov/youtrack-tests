@@ -1,3 +1,5 @@
+package ru.mail.locators;
+
 import org.openqa.selenium.By;
 
 public enum LocatorsEnum {

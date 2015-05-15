@@ -1,3 +1,5 @@
+package ru.mail.testdata;
+
 public class TestData {
     private String incorrectLogin = "test";
     private String incorrectPassword = "test";

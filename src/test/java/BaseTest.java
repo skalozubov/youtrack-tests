@@ -1,11 +1,11 @@
 import org.openqa.selenium.*;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.*;
+import ru.mail.helpers.WebDriverManager;
+import ru.mail.pages.LoginPage;
+import ru.mail.testdata.TestData;
 
-import java.util.concurrent.TimeUnit;
-
-public class ConfigurationManager {
-    protected static WebDriver driver = null;
+public class BaseTest {
+    protected WebDriver driver;
     public String baseUrl;
     protected TestData testData;
     protected LoginPage loginPage;
@@ -13,14 +13,12 @@ public class ConfigurationManager {
     @BeforeClass
     public void setUpClass() {
         System.out.println("Started all tests in class");
-        System.setProperty("webdriver.chrome.driver", "/usr/lib/chromedriver");
         baseUrl = "https://mail.ru/";
     }
 
     @BeforeMethod
     public void setUp() {
-        driver = new ChromeDriver();
-        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        driver = WebDriverManager.getDriver();
         driver.get(baseUrl);
         testData = new TestData();
         loginPage = new LoginPage();
@@ -28,15 +26,11 @@ public class ConfigurationManager {
 
     @AfterMethod
     public void tearDown() throws Exception {
-        driver.quit();
+        WebDriverManager.killDriver();
     }
 
     @AfterClass
     public void tearDownClass() {
         System.out.println("Finished all tests in class");
-    }
-
-    public static WebDriver getDriver() {
-        return driver;
     }
 }

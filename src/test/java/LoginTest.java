@@ -1,8 +1,9 @@
 import org.testng.annotations.Test;
+import ru.mail.pages.InboxPage;
 
 import static org.testng.Assert.assertEquals;
 
-public class MailRuTest extends ConfigurationManager {
+public class LoginTest extends BaseTest {
 
     //TODO: read ExpectedConditions.java WebDriverWait.java
     //TODO: 10 different tests with different asserts

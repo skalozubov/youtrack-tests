@@ -1,6 +1,10 @@
-/**
- * Created by kate on 27.04.15.
- */
+package ru.mail.pages;
+
+import ru.mail.helpers.WebDriverManager;
+import ru.mail.elements.Button;
+import ru.mail.elements.InputField;
+import ru.mail.locators.LocatorsEnum;
+
 public class LoginPage {
     private InputField loginInputField = new InputField(LocatorsEnum.LOGIN_FIELD.getValue());
     private InputField passwordInputField = new InputField(LocatorsEnum.PASSWORD_FIELD.getValue());
@@ -27,7 +31,7 @@ public class LoginPage {
     }
 
     public String getPageTitle() {
-        return ConfigurationManager.getDriver().getTitle();
+        return WebDriverManager.getDriver().getTitle();
     }
 
     public void getLatestEmail() {

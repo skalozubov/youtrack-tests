@@ -1,3 +1,5 @@
+package ru.mail.elements;
+
 import org.openqa.selenium.By;
 
 public class Button extends Element {

@@ -1,4 +1,7 @@
+package ru.mail.elements;
+
 import org.openqa.selenium.By;
+import ru.mail.elements.Element;
 
 public class InputField extends Element {
 
