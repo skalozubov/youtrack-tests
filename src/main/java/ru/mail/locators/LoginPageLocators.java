@@ -2,15 +2,16 @@ package ru.mail.locators;
 
 import org.openqa.selenium.By;
 
-public enum LocatorsEnum {
+public enum LoginPageLocators {
 
     LOGIN_FIELD(By.id("mailbox__login")),
     PASSWORD_FIELD(By.id("mailbox__password")),
-    SUBMIT_LOGIN_FORM_BUTTON(By.id("mailbox__auth__button"));
+    SUBMIT_LOGIN_FORM_BUTTON(By.id("mailbox__auth__button")),
+    OPEN_REGISTRATION_BUTTON(By.className("mailbox__register__link"));
 
     private By locator;
 
-    private LocatorsEnum(By locator) {
+    private LoginPageLocators(By locator) {
         this.locator = locator;
     }
 

@@ -37,4 +37,24 @@
         </plugins>
     </build>
 
+    <profiles>
+        <profile>
+            <id>prod</id>
+            <properties>
+                <environment>PROD</environment>
+                <baseUrl>https://checkout.viaplay.</baseUrl>
+            </properties>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+        </profile>
+        <profile>
+            <id>stage</id>
+            <properties>
+                <environment>STAGE</environment>
+                <baseUrl>https://checkout.stage.viaplay.</baseUrl>
+            </properties>
+        </profile>
+    </profiles>
+
 </project>
