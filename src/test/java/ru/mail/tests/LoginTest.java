@@ -1,20 +1,25 @@
-import org.testng.annotations.Test;
-import ru.mail.pages.InboxPage;
+package ru.mail.tests;
 
-import static org.testng.Assert.assertEquals;
+import org.testng.Assert;
+import org.testng.annotations.Test;
+import ru.mail.BaseTest;
+import ru.mail.pages.InboxPage;
 
 public class LoginTest extends BaseTest {
 
-    //TODO: read ExpectedConditions.java WebDriverWait.java
     //TODO: 10 different tests with different asserts
-    //TODO: refactor the project with packages
+    //TODO: HttpClient
+    //TODO email without UI
+    //TODO testng.xml
+    //TODO @Test attributes
+
 
     @Test
     public void unsuccessfulLoginTest() {
         loginPage.fillLoginField(testData.getIncorrectLogin())
                  .fillPasswordField(testData.getIncorrectPassword())
                  .submitLoginForm();
-        assertEquals(loginPage.getPageTitle(), testData.getPageTitle(), "Something went wrong while unsuccessful login");
+        Assert.assertEquals(loginPage.getPageTitle(), testData.getPageTitle(), "Something went wrong while unsuccessful login");
     }
 
     @Test
@@ -22,7 +27,7 @@ public class LoginTest extends BaseTest {
         loginPage.fillLoginField(testData.getCorrectLogin())
                 .fillPasswordField(testData.getCorrectPassword())
                 .submitLoginForm();
-        assertEquals(driver.getCurrentUrl(), testData.getPageUrl(), "Login was unsuccessful");
+        Assert.assertEquals(driver.getCurrentUrl(), testData.getPageUrl(), "Login was unsuccessful");
     }
 
     @Test

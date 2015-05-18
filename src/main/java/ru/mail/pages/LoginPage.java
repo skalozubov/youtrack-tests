@@ -33,8 +33,4 @@ public class LoginPage {
     public String getPageTitle() {
         return WebDriverManager.getDriver().getTitle();
     }
-
-    public void getLatestEmail() {
-
-    }
 }

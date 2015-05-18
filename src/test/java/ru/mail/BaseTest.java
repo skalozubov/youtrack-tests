@@ -1,3 +1,5 @@
+package ru.mail;
+
 import org.openqa.selenium.*;
 import org.testng.annotations.*;
 import ru.mail.helpers.WebDriverManager;

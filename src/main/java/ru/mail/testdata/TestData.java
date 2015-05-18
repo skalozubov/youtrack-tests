@@ -1,5 +1,6 @@
 package ru.mail.testdata;
 
+@SuppressWarnings("UnusedDeclaration")
 public class TestData {
     private String incorrectLogin = "test";
     private String incorrectPassword = "test";
