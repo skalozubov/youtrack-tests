@@ -26,11 +26,13 @@ public class RegistrationPage {
         yearOfBirth.select(testData.getYear());
         maleRadioButton.click();
         emailAddress.sendKeys(testData.getEmailAddress());
+        password.click();
         password.sendKeys(testData.getPassword());
         verifyPassword.sendKeys(testData.getPassword());
     }
 
-    public void submitRegistrationForm() {
+    public void submitRegistrationForm() throws InterruptedException {
+        Thread.sleep(2000);
         submitRegistrationButton.click();
     }
 

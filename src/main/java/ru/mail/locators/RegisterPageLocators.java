@@ -9,7 +9,7 @@ public enum RegisterPageLocators {
     DAY_OF_BIRTH(By.className("qc-select-day")),
     MONTH_OF_BIRTH(By.className("qc-select-month")),
     MALE_RADIO_BUTTON(By.id("man1")),
-    EMAIL_ADDRESS(By.xpath("//div[@class = \"loginField\"]/span/input")),
+    EMAIL_ADDRESS(By.xpath("//*[@id=\"loginField\"]/span/input")),
     PASSWORD_INPUT(By.cssSelector(".qc-pass-row input")),
     VERIFY_PASSWORD(By.cssSelector(".qc-passverify-row input")),
     SUBMIT_BUTTON(By.cssSelector(".btn_signup")),

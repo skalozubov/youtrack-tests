@@ -11,4 +11,8 @@ public class InputField extends Element {
     public void sendKeys(String keys) {
         element().sendKeys(keys);
     }
+
+    public void click() {
+        element().click();
+    }
 }

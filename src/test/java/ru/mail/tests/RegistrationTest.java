@@ -10,7 +10,7 @@ import static org.testng.Assert.assertTrue;
 public class RegistrationTest extends BaseTest {
 
     @Test
-    public void userShouldPassRegistrationSuccessfullyTest() {
+    public void userShouldPassRegistrationSuccessfullyTest() throws InterruptedException {
         RegistrationData registrationData = new RegistrationData();
         RegistrationPage registrationPage = loginPage.openRegistrationPage();
         registrationPage.fillRegistrationForm(registrationData);
