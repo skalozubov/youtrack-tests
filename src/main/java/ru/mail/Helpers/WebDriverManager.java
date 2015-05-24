@@ -6,9 +6,9 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import java.util.concurrent.TimeUnit;
 
 public class WebDriverManager {
-    public static WebDriver driver = null;
+    private WebDriver driver = null;
 
-    public static WebDriver getDriver() {
+    public WebDriver getDriver() {
         if (driver == null) {
             initializeDriver();
             return driver;
@@ -16,13 +16,13 @@ public class WebDriverManager {
         return driver;
     }
 
-    private static void initializeDriver() {
+    private void initializeDriver() {
         System.setProperty("webdriver.chrome.driver", "/usr/lib/chromedriver");
         driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
     }
 
-    public static void killDriver() {
+    public void killDriver() {
         driver.quit();
         driver = null;
     }

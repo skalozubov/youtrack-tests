@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="3" passed="3">
+  <reporter-output>
+  </reporter-output>
+  <suite name="TestSuite" duration-ms="26586" started-at="2015-05-18T16:15:59Z" finished-at="2015-05-18T16:16:26Z">
+    <groups>
+    </groups>
+    <test name="Regression1" duration-ms="26586" started-at="2015-05-18T16:15:59Z" finished-at="2015-05-18T16:16:26Z">
+      <class name="ru.mail.tests.LoginTest">
+        <test-method status="PASS" signature="setUpClass()[pri:0, instance:ru.mail.tests.LoginTest@37ecb28e]" name="setUpClass" is-config="true" duration-ms="13" started-at="2015-05-18T19:15:59Z" finished-at="2015-05-18T19:15:59Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpClass -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:ru.mail.tests.LoginTest@37ecb28e]" name="setUp" is-config="true" duration-ms="5421" started-at="2015-05-18T19:15:59Z" finished-at="2015-05-18T19:16:05Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="checkEmailTest()[pri:0, instance:ru.mail.tests.LoginTest@37ecb28e]" name="checkEmailTest" duration-ms="453" started-at="2015-05-18T19:16:05Z" finished-at="2015-05-18T19:16:05Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkEmailTest -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:ru.mail.tests.LoginTest@37ecb28e]" name="tearDown" is-config="true" duration-ms="566" started-at="2015-05-18T19:16:05Z" finished-at="2015-05-18T19:16:06Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:ru.mail.tests.LoginTest@37ecb28e]" name="setUp" is-config="true" duration-ms="3364" started-at="2015-05-18T19:16:06Z" finished-at="2015-05-18T19:16:09Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="successfulLoginTest()[pri:0, instance:ru.mail.tests.LoginTest@37ecb28e]" name="successfulLoginTest" duration-ms="9149" started-at="2015-05-18T19:16:09Z" finished-at="2015-05-18T19:16:18Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- successfulLoginTest -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:ru.mail.tests.LoginTest@37ecb28e]" name="tearDown" is-config="true" duration-ms="565" started-at="2015-05-18T19:16:18Z" finished-at="2015-05-18T19:16:19Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:ru.mail.tests.LoginTest@37ecb28e]" name="setUp" is-config="true" duration-ms="3257" started-at="2015-05-18T19:16:19Z" finished-at="2015-05-18T19:16:22Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="unsuccessfulLoginTest()[pri:0, instance:ru.mail.tests.LoginTest@37ecb28e]" name="unsuccessfulLoginTest" duration-ms="3206" started-at="2015-05-18T19:16:22Z" finished-at="2015-05-18T19:16:25Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- unsuccessfulLoginTest -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:ru.mail.tests.LoginTest@37ecb28e]" name="tearDown" is-config="true" duration-ms="562" started-at="2015-05-18T19:16:25Z" finished-at="2015-05-18T19:16:26Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="tearDownClass()[pri:0, instance:ru.mail.tests.LoginTest@37ecb28e]" name="tearDownClass" is-config="true" duration-ms="1" started-at="2015-05-18T19:16:26Z" finished-at="2015-05-18T19:16:26Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownClass -->
+      </class> <!-- ru.mail.tests.LoginTest -->
+    </test> <!-- Regression1 -->
+  </suite> <!-- TestSuite -->
+</testng-results>

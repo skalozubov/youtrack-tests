@@ -11,6 +11,7 @@ public class BaseTest {
     public String baseUrl;
     protected TestData testData;
     protected LoginPage loginPage;
+    private WebDriverManager webDriverManager = new WebDriverManager();
 
     @BeforeClass
     public void setUpClass() {
@@ -20,15 +21,15 @@ public class BaseTest {
 
     @BeforeMethod
     public void setUp() {
-        driver = WebDriverManager.getDriver();
+        driver = webDriverManager.getDriver();
         driver.get(baseUrl);
         testData = new TestData();
-        loginPage = new LoginPage();
+        loginPage = new LoginPage(driver);
     }
 
     @AfterMethod
     public void tearDown() throws Exception {
-        WebDriverManager.killDriver();
+        webDriverManager.killDriver();
     }
 
     @AfterClass

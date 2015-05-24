@@ -42,7 +42,7 @@
             <id>prod</id>
             <properties>
                 <environment>PROD</environment>
-                <baseUrl>https://checkout.viaplay.</baseUrl>
+                <baseUrl>http://mail.ru</baseUrl>
             </properties>
             <activation>
                 <activeByDefault>true</activeByDefault>
@@ -52,7 +52,7 @@
             <id>stage</id>
             <properties>
                 <environment>STAGE</environment>
-                <baseUrl>https://checkout.stage.viaplay.</baseUrl>
+                <baseUrl>http://mail.ru</baseUrl>
             </properties>
         </profile>
     </profiles>

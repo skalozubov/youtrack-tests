@@ -1,0 +1,8 @@
+ru/mail/pages/InboxPage.class
+ru/mail/elements/Element.class
+ru/mail/elements/Button.class
+ru/mail/pages/LoginPage.class
+ru/mail/elements/InputField.class
+ru/mail/testdata/TestData.class
+ru/mail/locators/LocatorsEnum.class
+ru/mail/helpers/WebDriverManager.class

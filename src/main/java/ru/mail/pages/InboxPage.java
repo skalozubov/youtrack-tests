@@ -1,6 +1,13 @@
 package ru.mail.pages;
 
-public class InboxPage {
+import org.openqa.selenium.WebDriver;
+
+public class InboxPage extends BasePage {
+
+    public InboxPage(WebDriver driver) {
+        super(driver);
+    }
+
     public void getLatestEmail() {
 
     }
