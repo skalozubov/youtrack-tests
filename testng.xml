@@ -1,10 +1,11 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
-<suite name="TestSuite" verbose="1" >
+<suite name="TestSuite" verbose="1" parallel="classes" thread-count="2">
 
     <test name="Regression1">
         <classes>
             <class name="ru.mail.tests.LoginTest"/>
+            <class name="ru.mail.tests.RegistrationTest"/>
         </classes>
     </test>
 </suite>
