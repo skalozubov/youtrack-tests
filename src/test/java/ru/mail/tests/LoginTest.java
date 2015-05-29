@@ -4,7 +4,10 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import ru.mail.BaseTest;
 import ru.mail.pages.InboxPage;
+import ru.yandex.qatools.allure.annotations.Features;
+import ru.yandex.qatools.allure.annotations.Stories;
 
+@Features("Login feature")
 public class LoginTest extends BaseTest {
     @Test
     public void unsuccessfulLoginTest() {
@@ -14,6 +17,7 @@ public class LoginTest extends BaseTest {
         Assert.assertEquals(loginPage.getPageTitle(), testData.getPageTitle(), "Something went wrong while unsuccessful login");
     }
 
+    @Stories("Existed user should be able to login successfully")
     @Test
     public void successfulLoginTest() {
         loginPage.fillLoginField(testData.getCorrectLogin())

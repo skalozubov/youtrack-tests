@@ -3,10 +3,12 @@ package ru.mail;
 import org.openqa.selenium.*;
 import org.testng.annotations.*;
 import ru.mail.helpers.ConfigurationManager;
+import ru.mail.helpers.ExecutionListener;
 import ru.mail.helpers.WebDriverManager;
 import ru.mail.pages.LoginPage;
 import ru.mail.testdata.TestData;
 
+@Listeners(ExecutionListener.class)
 public class BaseTest {
     protected WebDriver driver;
     public String baseUrl;
