@@ -6,14 +6,6 @@ import ru.mail.BaseTest;
 import ru.mail.pages.InboxPage;
 
 public class LoginTest extends BaseTest {
-
-    //TODO: 10 different tests with different asserts
-    //TODO: HttpClient
-    //TODO email without UI
-    //TODO testng.xml
-    //TODO @Test attributes
-
-
     @Test
     public void unsuccessfulLoginTest() {
         loginPage.fillLoginField(testData.getIncorrectLogin())
