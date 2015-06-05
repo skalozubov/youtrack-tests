@@ -7,8 +7,12 @@ import ru.mail.pages.InboxPage;
 import ru.yandex.qatools.allure.annotations.Features;
 import ru.yandex.qatools.allure.annotations.Stories;
 
+import static org.testng.Assert.fail;
+
 @Features("Login feature")
 public class LoginTest extends BaseTest {
+
+    @Stories("Not existed user should not be able to login")
     @Test
     public void unsuccessfulLoginTest() {
         loginPage.fillLoginField(testData.getIncorrectLogin())
@@ -27,10 +31,12 @@ public class LoginTest extends BaseTest {
     }
 
     @Test
+    @Stories("Failed test")
     public void checkEmailTest() {
         InboxPage inboxPage = loginPage.fillLoginField(testData.getCorrectLogin())
                 .fillPasswordField(testData.getCorrectPassword())
                 .submitSuccessfulLoginForm();
                 inboxPage.getLatestEmail();
+        fail("Some error.");
     }
 }

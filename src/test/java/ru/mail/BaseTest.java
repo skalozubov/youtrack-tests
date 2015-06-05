@@ -3,7 +3,7 @@ package ru.mail;
 import org.openqa.selenium.*;
 import org.testng.annotations.*;
 import ru.mail.helpers.ConfigurationManager;
-import ru.mail.helpers.ExecutionListener;
+import ru.mail.listeners.ExecutionListener;
 import ru.mail.helpers.WebDriverManager;
 import ru.mail.pages.LoginPage;
 import ru.mail.testdata.TestData;
@@ -39,5 +39,9 @@ public class BaseTest {
     @AfterClass
     public void tearDownClass() {
         System.out.println("Finished all tests in class");
+    }
+
+    public WebDriver getDriver() {
+        return driver;
     }
 }
