@@ -25,7 +25,8 @@ public class BaseTest {
 
     @BeforeMethod
     public void setUp() {
-        driver = webDriverManager.getDriver();
+        //TODO: move browser type into properties
+        driver = webDriverManager.getWebDriver("CHROME");
         driver.get(baseUrl);
         testData = new TestData();
         loginPage = new LoginPage(driver);
@@ -41,6 +42,7 @@ public class BaseTest {
         System.out.println("Finished all tests in class");
     }
 
+    //TODO: need to investiagte how to forvard driver into listener.
     public WebDriver getDriver() {
         return driver;
     }
