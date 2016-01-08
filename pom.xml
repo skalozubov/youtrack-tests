@@ -30,7 +30,7 @@
         <dependency>
             <groupId>ru.yandex.qatools.allure</groupId>
             <artifactId>allure-testng-adaptor</artifactId>
-            <version>1.4.13</version>
+            <version>1.4.14</version>
             <exclusions>
                 <exclusion>
                     <groupId>junit</groupId>
@@ -45,8 +45,19 @@
             <resource>
                 <directory>src/main/resources</directory>
                 <filtering>true</filtering>
+                <includes>
+                    <include>**/*.properties</include>
+                </includes>
+            </resource>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>false</filtering>
+                <excludes>
+                    <exclude>/webdrivers/*</exclude>
+                </excludes>
             </resource>
         </resources>
+
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -88,7 +99,7 @@
                 <artifactId>allure-maven-plugin</artifactId>
                 <version>2.0</version>
                 <configuration>
-                    <reportVersion>1.4.13</reportVersion>
+                    <reportVersion>1.4.14</reportVersion>
                 </configuration>
             </plugin>
         </plugins>
