@@ -1,42 +1,65 @@
 package ru.mail.pages;
 
 import org.openqa.selenium.WebDriver;
-import ru.mail.elements.*;
-import ru.mail.locators.RegisterPageLocators;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 import ru.mail.testdata.RegistrationData;
+import ru.yandex.qatools.htmlelements.element.Button;
+import ru.yandex.qatools.htmlelements.element.Select;
+import ru.yandex.qatools.htmlelements.element.TextInput;
 
 public class RegistrationPage extends BasePage {
+    @FindBy(css = ".qc-firstname-row input")
+    private TextInput firstNameTextInput;
 
-    private InputField firstNameInputField = new InputField(RegisterPageLocators.FIRST_NAME.getValue(), driver);
-    private InputField lastNameInputField = new InputField(RegisterPageLocators.LAST_NAME.getValue(), driver);
-    private Dropdown dayOfBirth = new Dropdown(RegisterPageLocators.DAY_OF_BIRTH.getValue(), driver);
-    private Dropdown monthOfBirth = new Dropdown(RegisterPageLocators.MONTH_OF_BIRTH.getValue(), driver);
-    private Dropdown yearOfBirth = new Dropdown(RegisterPageLocators.YEAR_OF_BIRTH.getValue(), driver);
-    private RadioButton maleRadioButton = new RadioButton(RegisterPageLocators.MALE_RADIO_BUTTON.getValue(), driver);
-    private InputField emailAddress = new InputField(RegisterPageLocators.EMAIL_ADDRESS.getValue(), driver);
-    private InputField password = new InputField(RegisterPageLocators.PASSWORD_INPUT.getValue(), driver);
-    private InputField verifyPassword = new InputField(RegisterPageLocators.VERIFY_PASSWORD.getValue(), driver);
-    private Button submitRegistrationButton = new Button(RegisterPageLocators.SUBMIT_BUTTON.getValue(), driver);
-    private CapturePopup capturePopup = new CapturePopup(RegisterPageLocators.CAPTURE_POPUP.getValue(), driver);
+    @FindBy(css = ".qc-lastname-row input")
+    private TextInput lastNameTextInput;
+
+    @FindBy(className = "qc-select-day")
+    private Select dayOfBirth;
+
+    @FindBy(className = "qc-select-month")
+    private Select monthOfBirth;
+
+    @FindBy(className = "qc-select-year")
+    private Select yearOfBirth;
+
+    @FindBy(id = "man1")
+    private WebElement maleRadioButton;
+
+    @FindBy(xpath = "//*[@id=\"loginField\"]/span/input")
+    private TextInput emailAddress;
+
+    @FindBy(css = ".qc-pass-row input")
+    private TextInput password;
+
+    @FindBy(css = ".qc-passverify-row input")
+    private TextInput verifyPassword;
+
+    @FindBy(css = ".btn_signup")
+    private Button submitRegistrationButton;
+
+    @FindBy(xpath = "//div[@class = \"is-signupphone2_in\"]")
+    private WebElement capturePopup;
 
     public RegistrationPage(WebDriver driver) {
         super(driver);
     }
 
     public void fillRegistrationForm(RegistrationData testData) {
-        firstNameInputField.sendKeys(testData.getFirstName());
-        lastNameInputField.sendKeys(testData.getLastName());
-        dayOfBirth.select(testData.getDayOfBirth());
-        monthOfBirth.select(testData.getMonthOfBirth());
-        yearOfBirth.select(testData.getYear());
+        firstNameTextInput.sendKeys(testData.getFirstName());
+        lastNameTextInput.sendKeys(testData.getLastName());
+        dayOfBirth.selectByVisibleText(testData.getDayOfBirth());
+        monthOfBirth.selectByVisibleText(testData.getMonthOfBirth());
+        yearOfBirth.selectByVisibleText(testData.getYear());
         maleRadioButton.click();
         emailAddress.sendKeys(testData.getEmailAddress());
-        password.click();
         password.sendKeys(testData.getPassword());
         verifyPassword.sendKeys(testData.getPassword());
     }
 
     public void submitRegistrationForm() throws InterruptedException {
+        //TODO: need to replace with expected conditions
         Thread.sleep(2000);
         submitRegistrationButton.click();
     }
