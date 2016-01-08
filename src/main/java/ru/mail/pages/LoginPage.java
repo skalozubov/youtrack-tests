@@ -1,17 +1,24 @@
 package ru.mail.pages;
 
 import org.openqa.selenium.WebDriver;
-import ru.mail.helpers.WebDriverManager;
-import ru.mail.elements.Button;
-import ru.mail.elements.InputField;
-import ru.mail.locators.LoginPageLocators;
+
+import org.openqa.selenium.support.FindBy;
 import ru.yandex.qatools.allure.annotations.Step;
+import ru.yandex.qatools.htmlelements.element.Button;
+import ru.yandex.qatools.htmlelements.element.TextInput;
 
 public class LoginPage extends BasePage {
-    private InputField loginInputField = new InputField(LoginPageLocators.LOGIN_FIELD.getValue(), driver);
-    private InputField passwordInputField = new InputField(LoginPageLocators.PASSWORD_FIELD.getValue(), driver);
-    private Button submitLoginFormButton = new Button(LoginPageLocators.SUBMIT_LOGIN_FORM_BUTTON.getValue(), driver);
-    private Button openRegistrationPageButton = new Button(LoginPageLocators.OPEN_REGISTRATION_BUTTON.getValue(), driver);
+    @FindBy(id = "mailbox__login")
+    private TextInput loginInputField;
+
+    @FindBy(id = "mailbox__password")
+    private TextInput passwordInputField;
+
+    @FindBy(id = "mailbox__auth__button")
+    private Button submitLoginFormButton;
+
+    @FindBy(className = "mailbox__register__link")
+    private Button openRegistrationPageButton;
 
     public LoginPage(WebDriver driver) {
         super(driver);

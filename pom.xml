@@ -4,8 +4,8 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>MyGroupId</groupId>
-    <artifactId>MyArtifactId</artifactId>
+    <groupId>sourceit</groupId>
+    <artifactId>sourceit</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <dependencies>
@@ -19,6 +19,12 @@
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
             <version>6.8.8</version>
+        </dependency>
+
+        <dependency>
+            <groupId>ru.yandex.qatools.htmlelements</groupId>
+            <artifactId>htmlelements-java</artifactId>
+            <version>1.14</version>
         </dependency>
 
         <dependency>
@@ -74,7 +80,7 @@
                 <artifactId>allure-maven-plugin</artifactId>
                 <version>2.0</version>
                 <configuration>
-                    <reportVersion>1.4.6</reportVersion>
+                    <reportVersion>1.4.13</reportVersion>
                 </configuration>
             </plugin>
         </plugins>
