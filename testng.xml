@@ -4,8 +4,8 @@
 
     <test name="Regression1">
         <classes>
-            <class name="ru.mail.tests.LoginTest"/>
-            <class name="ru.mail.tests.RegistrationTest"/>
+            <class name="com.jetbrains.youtrack.tests.DashboardTests"/>
+            <class name="com.jetbrains.youtrack.tests.LoginTests"/>
         </classes>
     </test>
 </suite>

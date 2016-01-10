@@ -1,19 +1,17 @@
-package ru.mail;
+package com.jetbrains.youtrack;
 
-import org.openqa.selenium.*;
+import com.jetbrains.youtrack.helpers.WebDriverManager;
+import org.openqa.selenium.WebDriver;
 import org.testng.annotations.*;
-import ru.mail.helpers.ConfigurationManager;
-import ru.mail.listeners.ExecutionListener;
-import ru.mail.helpers.WebDriverManager;
-import ru.mail.pages.LoginPage;
-import ru.mail.testdata.TestData;
+import com.jetbrains.youtrack.helpers.ConfigurationManager;
+import com.jetbrains.youtrack.listeners.ExecutionListener;
+import ru.yandex.qatools.allure.annotations.Step;
 
 @Listeners(ExecutionListener.class)
 public class BaseTest {
     protected WebDriver driver;
-    public String baseUrl;
-    protected TestData testData;
-    protected LoginPage loginPage;
+    private String baseUrl;
+    private String browser;
     private WebDriverManager webDriverManager = new WebDriverManager();
     private ConfigurationManager configurationManager = new ConfigurationManager();
 
@@ -21,15 +19,14 @@ public class BaseTest {
     public void setUpClass() {
         System.out.println("Started all tests in class");
         baseUrl = configurationManager.getProperty("baseUrl");
+        browser = configurationManager.getProperty("browser");
     }
 
     @BeforeMethod
+    @Step("Open Dashboard page")
     public void setUp() {
-        //TODO: move browser type into properties
-        driver = webDriverManager.getWebDriver("CHROME");
+        driver = webDriverManager.getWebDriver(browser);
         driver.get(baseUrl);
-        testData = new TestData();
-        loginPage = new LoginPage(driver);
     }
 
     @AfterMethod
@@ -42,7 +39,7 @@ public class BaseTest {
         System.out.println("Finished all tests in class");
     }
 
-    //TODO: need to investiagte how to forvard driver into listener.
+    //TODO: need to investigate how to forward driver into listener.
     public WebDriver getDriver() {
         return driver;
     }

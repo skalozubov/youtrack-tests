@@ -1,4 +1,4 @@
-package ru.mail.helpers;
+package com.jetbrains.youtrack.helpers;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;

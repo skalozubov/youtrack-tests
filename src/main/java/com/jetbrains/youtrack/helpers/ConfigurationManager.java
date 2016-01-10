@@ -1,5 +1,4 @@
-package ru.mail.helpers;
-
+package com.jetbrains.youtrack.helpers;
 
 import java.io.IOException;
 import java.util.Properties;
