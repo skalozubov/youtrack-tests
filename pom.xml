@@ -4,8 +4,8 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>sourceit</groupId>
-    <artifactId>sourceit</artifactId>
+    <groupId>com.jetbrains</groupId>
+    <artifactId>youtrack-tests</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <dependencies>
@@ -110,7 +110,7 @@
             <id>prod</id>
             <properties>
                 <environment>PROD</environment>
-                <baseUrl>http://mail.ru</baseUrl>
+                <baseUrl>https://askalozubov.myjetbrains.com/youtrack</baseUrl>
             </properties>
             <activation>
                 <activeByDefault>true</activeByDefault>
@@ -120,7 +120,7 @@
             <id>stage</id>
             <properties>
                 <environment>STAGE</environment>
-                <baseUrl>http://mail.ru</baseUrl>
+                <baseUrl>https://askalozubov.myjetbrains.com/youtrack</baseUrl>
             </properties>
         </profile>
     </profiles>

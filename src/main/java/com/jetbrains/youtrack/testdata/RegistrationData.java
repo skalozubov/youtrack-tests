@@ -1,4 +1,4 @@
-package ru.mail.testdata;
+package com.jetbrains.youtrack.testdata;
 
 import java.util.Random;
 

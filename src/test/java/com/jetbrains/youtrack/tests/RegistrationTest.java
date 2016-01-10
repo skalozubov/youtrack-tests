@@ -1,9 +1,9 @@
-package ru.mail.tests;
+package com.jetbrains.youtrack.tests;
 
+import com.jetbrains.youtrack.pages.RegistrationPage;
 import org.testng.annotations.Test;
-import ru.mail.BaseTest;
-import ru.mail.pages.RegistrationPage;
-import ru.mail.testdata.RegistrationData;
+import com.jetbrains.youtrack.BaseTest;
+import com.jetbrains.youtrack.testdata.RegistrationData;
 import ru.yandex.qatools.allure.annotations.Features;
 import ru.yandex.qatools.allure.annotations.Stories;
 

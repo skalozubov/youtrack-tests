@@ -1,4 +1,4 @@
-package ru.mail.testdata;
+package com.jetbrains.youtrack.testdata;
 
 @SuppressWarnings("UnusedDeclaration")
 public class TestData {

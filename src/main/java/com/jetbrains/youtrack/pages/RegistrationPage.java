@@ -1,9 +1,9 @@
-package ru.mail.pages;
+package com.jetbrains.youtrack.pages;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import ru.mail.testdata.RegistrationData;
+import com.jetbrains.youtrack.testdata.RegistrationData;
 import ru.yandex.qatools.htmlelements.element.Button;
 import ru.yandex.qatools.htmlelements.element.Select;
 import ru.yandex.qatools.htmlelements.element.TextInput;

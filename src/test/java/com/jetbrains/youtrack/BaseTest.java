@@ -1,12 +1,12 @@
-package ru.mail;
+package com.jetbrains.youtrack;
 
+import com.jetbrains.youtrack.helpers.WebDriverManager;
+import com.jetbrains.youtrack.pages.LoginPage;
 import org.openqa.selenium.*;
 import org.testng.annotations.*;
-import ru.mail.helpers.ConfigurationManager;
-import ru.mail.listeners.ExecutionListener;
-import ru.mail.helpers.WebDriverManager;
-import ru.mail.pages.LoginPage;
-import ru.mail.testdata.TestData;
+import com.jetbrains.youtrack.helpers.ConfigurationManager;
+import com.jetbrains.youtrack.listeners.ExecutionListener;
+import com.jetbrains.youtrack.testdata.TestData;
 
 @Listeners(ExecutionListener.class)
 public class BaseTest {

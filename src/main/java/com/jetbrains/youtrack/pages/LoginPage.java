@@ -1,4 +1,4 @@
-package ru.mail.pages;
+package com.jetbrains.youtrack.pages;
 
 import org.openqa.selenium.WebDriver;
 
