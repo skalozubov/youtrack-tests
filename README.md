@@ -1,1 +1,1 @@
-# Test framework for Jetbains Youtrack.
+# Test framework for Jetbrains Youtrack.
