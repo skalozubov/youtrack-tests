@@ -13,7 +13,6 @@ public class DashboardTests extends BaseTest {
     @Stories("Any user should be able to see the Dashboard")
     public void anyUserShouldBeAbleToSeeTheDashboard() {
         DashboardPage dashboardPage = new DashboardPage(driver);
-        dashboardPage.open();
         assertTrue(dashboardPage.isPageCorrect(), "Dashboard page was not verified");
     }
 }

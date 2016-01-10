@@ -111,6 +111,7 @@
             <properties>
                 <environment>PROD</environment>
                 <baseUrl>https://askalozubov.myjetbrains.com/youtrack</baseUrl>
+                <browser>CHROME</browser>
             </properties>
             <activation>
                 <activeByDefault>true</activeByDefault>
@@ -121,6 +122,7 @@
             <properties>
                 <environment>STAGE</environment>
                 <baseUrl>https://askalozubov.myjetbrains.com/youtrack</baseUrl>
+                <browser>CHROME</browser>
             </properties>
         </profile>
     </profiles>

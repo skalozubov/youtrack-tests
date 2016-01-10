@@ -1,45 +1,47 @@
 package com.jetbrains.youtrack.pages;
 
+import com.jetbrains.youtrack.users.YoutrackUser;
 import org.openqa.selenium.WebDriver;
-
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import ru.yandex.qatools.allure.annotations.Step;
 import ru.yandex.qatools.htmlelements.element.Button;
 import ru.yandex.qatools.htmlelements.element.TextInput;
 
 public class LoginPage extends BaseYoutrackPage {
-    @FindBy(id = "mailbox__login")
-    private TextInput loginInputField;
+    @FindBy(css = ".login-button")
+    private Button submitLoginButton;
 
-    @FindBy(id = "mailbox__password")
+    @FindBy(css = "#username")
+    private TextInput usernameInputField;
+
+    @FindBy(css = "#password")
     private TextInput passwordInputField;
 
-    @FindBy(id = "mailbox__auth__button")
-    private Button submitLoginFormButton;
-
-    @FindBy(className = "mailbox__register__link")
-    private Button openRegistrationPageButton;
+    @FindBy(xpath = ".//div[@class=\"header__text\"]/span[@ng-show=\"message\"]")
+    private WebElement loginErrorMessage;
 
     public LoginPage(WebDriver driver) {
         super(driver);
     }
 
-    @Step("Fill login field")
-    public LoginPage fillLoginField(String login) {
-        loginInputField.sendKeys(login);
-        return this;
+    @Override
+    public boolean isPageCorrect() {
+        return submitLoginButton.isDisplayed();
     }
 
-    @Step("Fill password field")
-    public LoginPage fillPasswordField(String password) {
-        passwordInputField.sendKeys(password);
-        return this;
+    @Step("Fill login form and submit it")
+    public BaseYoutrackPage doLogin(YoutrackUser user, YoutrackPages targetPage) {
+        usernameInputField.clear();
+        usernameInputField.sendKeys(user.getUsername());
+        passwordInputField.clear();
+        passwordInputField.sendKeys(user.getPassword());
+        submitLoginButton.click();
+        return pagesFactory.getPage(targetPage);
     }
 
-    @Step("Submit login form")
-    public LoginPage submitLoginForm() {
-        submitLoginFormButton.click();
-        return this;
+    @Step("Check that login error message is on the page")
+    public boolean isLoginErrorMessageVisible() {
+        return loginErrorMessage.isDisplayed();
     }
-
 }

@@ -5,6 +5,7 @@
     <test name="Regression1">
         <classes>
             <class name="com.jetbrains.youtrack.tests.DashboardTests"/>
+            <class name="com.jetbrains.youtrack.tests.LoginTests"/>
         </classes>
     </test>
 </suite>
