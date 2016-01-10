@@ -4,8 +4,7 @@
 
     <test name="Regression1">
         <classes>
-            <class name="com.jetbrains.youtrack.tests.LoginTest"/>
-            <class name="com.jetbrains.youtrack.tests.RegistrationTest"/>
+            <class name="com.jetbrains.youtrack.tests.DashboardTests"/>
         </classes>
     </test>
 </suite>

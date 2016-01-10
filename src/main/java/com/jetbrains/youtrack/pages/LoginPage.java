@@ -7,7 +7,7 @@ import ru.yandex.qatools.allure.annotations.Step;
 import ru.yandex.qatools.htmlelements.element.Button;
 import ru.yandex.qatools.htmlelements.element.TextInput;
 
-public class LoginPage extends BasePage {
+public class LoginPage extends BaseYoutrackPage {
     @FindBy(id = "mailbox__login")
     private TextInput loginInputField;
 
@@ -42,18 +42,4 @@ public class LoginPage extends BasePage {
         return this;
     }
 
-    @Step("Submit login form")
-    public InboxPage submitSuccessfulLoginForm() {
-        submitLoginFormButton.click();
-        return new InboxPage(driver);
-    }
-
-    public String getPageTitle() {
-        return driver.getTitle();
-    }
-
-    public RegistrationPage openRegistrationPage() {
-        openRegistrationPageButton.click();
-        return new RegistrationPage(driver);
-    }
 }
