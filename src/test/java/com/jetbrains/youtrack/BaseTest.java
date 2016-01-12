@@ -1,7 +1,7 @@
 package com.jetbrains.youtrack;
 
-import com.jetbrains.youtrack.helpers.*;
 import com.jetbrains.youtrack.helpers.Configuration;
+import com.jetbrains.youtrack.helpers.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.*;
 import com.jetbrains.youtrack.listeners.ExecutionListener;

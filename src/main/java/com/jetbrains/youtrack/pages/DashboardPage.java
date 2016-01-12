@@ -1,5 +1,6 @@
 package com.jetbrains.youtrack.pages;
 
+import com.jetbrains.youtrack.helpers.SeleniumHelper;
 import com.jetbrains.youtrack.users.YoutrackUser;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -23,7 +24,7 @@ public class DashboardPage extends BaseYoutrackPage {
 
     @Override
     public boolean isPageCorrect() {
-        return youtrackIssuesWidget.isDisplayed();
+        return SeleniumHelper.isElementPresentAndVisible(youtrackIssuesWidget);
     }
 
     @Step("Click Login button")
