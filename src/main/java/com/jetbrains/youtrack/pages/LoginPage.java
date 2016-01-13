@@ -1,5 +1,6 @@
 package com.jetbrains.youtrack.pages;
 
+import com.jetbrains.youtrack.helpers.SeleniumHelper;
 import com.jetbrains.youtrack.users.YoutrackUser;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -27,7 +28,7 @@ public class LoginPage extends BaseYoutrackPage {
 
     @Override
     public boolean isPageCorrect() {
-        return submitLoginButton.isDisplayed();
+        return SeleniumHelper.isElementPresentAndVisible(submitLoginButton.getWrappedElement());
     }
 
     @Step("Fill login form and submit it")
@@ -42,6 +43,6 @@ public class LoginPage extends BaseYoutrackPage {
 
     @Step("Check that login error message is on the page")
     public boolean isLoginErrorMessageVisible() {
-        return loginErrorMessage.isDisplayed();
+        return SeleniumHelper.isElementPresentAndVisible(loginErrorMessage);
     }
 }
