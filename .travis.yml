@@ -4,3 +4,16 @@ before_script:
   - "sh -e /etc/init.d/xvfb start"
   - sleep 3 # give xvfb some time to start
 script: mvn clean verify site -Dbrowser=FIREFOX
+after_success: |
+  if [ -n "$GITHUB_API_KEY" ]; then
+    cd "$TRAVIS_BUILD_DIR"
+    cd target/site/allure-maven-plugin
+    git init
+    git checkout -b gh-pages
+    git add .
+    git -c user.name='travis' -c user.email='travis' commit -m init
+    # Make sure to make the output quiet, or else the API token will leak!
+    # This works because the API key can replace your password.
+    git push -f -q https://skalozubov:$GITHUB_API_KEY@github.com/skalozubov/youtrack-tests-result gh-pages &2>/dev/null
+    cd "$TRAVIS_BUILD_DIR"
+  fi
