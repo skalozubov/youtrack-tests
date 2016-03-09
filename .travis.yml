@@ -12,7 +12,6 @@ after_success: |
     git checkout -b gh-pages
     git add .
     git -c user.name='travis' -c user.email='travis' commit -m init
-    git push -f -q https
     git push -f -q https://skalozubov:$GITHUB_API_KEY@github.com/skalozubov/youtrack-tests-result gh-pages &>/dev/null
     cd "$TRAVIS_BUILD_DIR"
   fi
